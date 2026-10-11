@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muhammad Hafiz — Full Stack Developer</title>
+<meta name="description" content="Muhammad Hafiz — Full Stack Developer building with React, Python and applied AI.">
+<meta name="theme-color" content="#0A0C10">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0A0C10;--card:rgba(255,255,255,.04);--line:rgba(255,255,255,.09);--acc:#4a90e2;--acc2:#7c5cff;--tx:#e6edf3;--mu:#8b98a9}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{counter-reset:s;background:radial-gradient(1100px 600px at 12% -8%,rgba(74,144,226,.13),transparent 70%),radial-gradient(900px 500px at 100% 100%,rgba(124,92,255,.11),transparent 70%),var(--bg);background-attachment:fixed;color:var(--tx);font-family:Inter,system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+main,nav,footer{position:relative;z-index:1}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+nav{position:fixed;top:0;left:0;right:0;z-index:5;backdrop-filter:blur(14px);background:rgba(10,12,16,.6);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+.logo{font-family:'Fira Code',monospace;font-weight:500;color:var(--acc)}
+nav ul{display:flex;gap:26px;list-style:none;font-size:14px;color:var(--mu)}
+nav ul a:hover{color:var(--tx)}
+section{padding:110px 0 30px}
+h2{font-size:clamp(26px,4vw,36px);font-weight:800;margin-bottom:8px}
+h2{counter-increment:s}h2::before{content:'0' counter(s);display:block;font-family:'Fira Code',monospace;font-size:13px;font-weight:500;letter-spacing:.14em;color:var(--acc);margin-bottom:6px}
+h2 span{background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mu);margin-bottom:36px}
+#hero{min-height:100vh;display:flex;align-items:center;padding-top:60px}
+.hi{font-family:'Fira Code',monospace;color:var(--acc);font-size:14px;margin-bottom:14px}
+h1{font-size:clamp(40px,7vw,76px);line-height:1.05;font-weight:800;margin-bottom:18px}
+h1 span{background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{max-width:520px;color:var(--mu);font-size:18px;margin-bottom:28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:34px}
+.btn{padding:12px 22px;border-radius:10px;font-weight:600;font-size:15px;border:1px solid var(--line);transition:.25s}
+.btn.p{background:linear-gradient(90deg,var(--acc),var(--acc2));border:0}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(74,144,226,.25)}
+.term{max-width:430px;background:rgba(13,17,23,.85);border:1px solid var(--line);border-radius:12px;font-family:'Fira Code',monospace;font-size:13px;overflow:hidden}
+.term .bar{display:flex;gap:6px;padding:10px 14px;border-bottom:1px solid var(--line)}
+.term .bar i{width:10px;height:10px;border-radius:50%;background:#ff5f56}.term .bar i:nth-child(2){background:#ffbd2e}.term .bar i:nth-child(3){background:#27c93f}
+.term pre{padding:14px;min-height:130px;white-space:pre-wrap;color:#9fb3c8}
+.term b{color:var(--acc);font-weight:500}
+.cur{display:inline-block;width:7px;height:14px;background:var(--acc);vertical-align:middle;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.grid{display:grid;gap:20px}
+.about{grid-template-columns:1.3fr 1fr;align-items:start}
+.glass{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;backdrop-filter:blur(8px)}
+.stats{grid-template-columns:1fr 1fr}
+.stat b{display:block;font-size:30px;font-weight:800;color:var(--acc)}
+.stat span{font-size:13px;color:var(--mu)}
+.projects{grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.card{transition:transform .15s,border-color .3s;transform-style:preserve-3d;display:flex;flex-direction:column;gap:12px}
+.card:hover{border-color:rgba(74,144,226,.55)}
+.card h3{font-size:19px}
+.card p{color:var(--mu);font-size:14.5px;flex:1}
+.hl{font-size:13px;color:#9ec5f5}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{font-family:'Fira Code',monospace;font-size:11.5px;padding:3px 9px;border-radius:99px;background:rgba(74,144,226,.12);color:#9ec5f5}
+.links{display:flex;gap:16px;font-size:14px;font-weight:600}
+.links a{color:var(--acc)}.links a:hover{text-decoration:underline}
+.skills{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.skills h4{font-size:14px;color:var(--acc);margin-bottom:10px;font-family:'Fira Code',monospace;font-weight:500}
+.certs{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.certs .glass{font-size:15px}.certs small{display:block;color:var(--mu);font-size:13px}
+#contact{text-align:center;padding-bottom:70px}
+#contact .lead{margin:0 auto 26px}
+footer{text-align:center;color:var(--mu);font-size:13px;padding:24px;border-top:1px solid var(--line)}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+.tl{position:relative;padding-left:30px;border-left:1px solid var(--line);display:grid;gap:26px;margin-left:6px}
+.tl .it{position:relative}.tl .it::before{content:'';position:absolute;left:-36px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--acc);box-shadow:0 0 14px var(--acc)}
+.tl time{font-family:'Fira Code',monospace;font-size:12.5px;color:var(--acc)}.tl h3{font-size:19px;margin:2px 0}.tl p{color:var(--mu);font-size:15px;max-width:640px}
+.bring{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}.bring .glass{transition:border-color .3s,transform .3s}.bring .glass:hover{border-color:rgba(74,144,226,.5);transform:translateY(-4px)}
+.bring .ic{font-size:26px;margin-bottom:8px}.bring h3{font-size:17px;margin-bottom:6px}.bring p{color:var(--mu);font-size:14.5px}
+.nr{color:var(--acc)!important;font-weight:600}
+@media(max-width:800px){.about{grid-template-columns:1fr}nav ul{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+<nav><div class="wrap"><a class="logo" href="#hero">&lt;hafiz /&gt;</a>
+<ul><li><a href="#about">About</a></li><li><a href="#journey">Journey</a></li><li><a href="#bring">Why me</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#certs">Certs</a></li><li><a href="#contact">Contact</a></li><li><a class="nr" href="Hafiz_Resume.pdf" download="Hafiz_Resume.pdf">Resume ⬇</a></li></ul></div></nav>
+
+<main>
+<section id="hero"><div class="wrap">
+  <p class="hi">// hello, world</p>
+  <h1>I'm <span>Muhammad Hafiz</span><br>Full Stack &amp; AI Developer</h1>
+  <p class="lead">I build web apps and applied AI, from React frontends and Flask or Node APIs to RAG pipelines and computer vision models.</p>
+  <div class="btns"><a class="btn p" href="#projects">View my work</a><a class="btn" href="mailto:hafiz12112003@gmail.com">Get in touch</a><a class="btn" href="Hafiz_Resume.pdf" download="Hafiz_Resume.pdf">⬇ Resume</a><a class="btn" href="https://github.com/Hafiz12112003" target="_blank" rel="noopener">GitHub</a></div>
+  <div class="term"><div class="bar"><i></i><i></i><i></i></div><pre id="t"></pre></div>
+</div></section>
+
+<section id="about"><div class="wrap">
+  <h2 class="rv">About <span>me</span></h2><p class="sub rv">B.Tech IT, Aug 2021 – Jul 2025 · Mohamed Sathak AJ College of Engineering, Chennai</p>
+  <div class="grid about">
+    <div class="glass rv"><p>I'm a B.Tech IT graduate with hands-on full-stack experience across React.js, Python (Flask) and MongoDB. I've built an AI support platform with a RAG pipeline and JWT-secured REST APIs, a graph-database scouting platform, an AI diagnostic system at 90%+ accuracy, an LLM complaint workflow and a feedback-clustering tool.</p><br><p>I care about measuring whether things work, writing honest limitations, and deploying end to end. I'm looking for Full Stack, Junior Web or AI/ML Engineer roles.</p></div>
+    <div class="grid stats rv">
+      <div class="glass stat"><b>6</b><span>featured projects</span></div>
+      <div class="glass stat"><b>15+</b><span>REST APIs in ShopNest</span></div>
+      <div class="glass stat"><b>90%+</b><span>EyeSight accuracy</span></div>
+      <div class="glass stat"><b>4</b><span>certifications</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="journey"><div class="wrap">
+  <h2 class="rv">My <span>journey</span></h2><p class="sub rv">From classroom to shipped products</p>
+  <div class="tl">
+    <div class="it rv"><time>Aug 2021</time><h3>Started B.Tech in Information Technology</h3><p>Began my degree at Mohamed Sathak AJ College of Engineering, Chennai, and built my foundation in OOP, data structures and web development.</p></div>
+    <div class="it rv"><time>2025</time><h3>Final-year project: EyeSight</h3><p>Benchmarked EfficientNet, ResNet and DenseNet in TensorFlow for diabetic retinopathy detection, reaching 90%+ accuracy, and wrapped it in a Flask + React app with risk dashboards.</p></div>
+    <div class="it rv"><time>Jul 2025</time><h3>Graduated, B.Tech IT</h3><p>Finished my degree and added Python, Java full stack and MS Office training, plus the AWS Cloud Practitioner certification.</p></div>
+    <div class="it rv"><time>2026</time><h3>ShopNest and Scout</h3><p>Built the ShopNest RAG support platform as a technical assessment and was selected for the second-round interview. Delivered Scout, a Neo4j scouting platform, as a client assignment.</p></div>
+    <div class="it rv"><time>2026</time><h3>Shipping AI and full-stack projects</h3><p>A LangGraph complaint workflow, a deployed template store, and Signal Stitcher with a measured evaluation.</p></div>
+    <div class="it rv"><time>Now</time><h3>Open to work</h3><p>Looking for Full Stack, Junior Web or AI/ML Engineer roles where I can build and ship reliable, well-tested web applications from day one.</p></div>
+  </div>
+</div></section>
+
+<section id="bring"><div class="wrap">
+  <h2 class="rv">What I <span>bring</span></h2><p class="sub rv">What you get when I join your team</p>
+  <div class="grid bring">
+    <div class="glass rv"><div class="ic">🚀</div><h3>End-to-end ownership</h3><p>I take features from idea to production: UI, API, database and hosting on Vercel, Render and Neon.</p></div>
+    <div class="glass rv"><div class="ic">🧠</div><h3>Applied AI that works</h3><p>RAG pipelines, LangGraph workflows and CNNs, built into real products instead of staying in notebooks.</p></div>
+    <div class="glass rv"><div class="ic">📏</div><h3>Measured results</h3><p>I test against baselines and write down limits, like Signal Stitcher's F1 of 0.63 versus 0.38 for word counts.</p></div>
+    <div class="glass rv"><div class="ic">🔧</div><h3>Debugging mindset</h3><p>When a reasoning model returned empty JSON, I traced it and fixed it with reasoning effort and token limits.</p></div>
+    <div class="glass rv"><div class="ic">⚡</div><h3>Fast learner</h3><p>I picked up LangGraph, Neo4j, Groq and FastAPI through real project work, not just tutorials.</p></div>
+    <div class="glass rv"><div class="ic">☁️</div><h3>Cloud foundation</h3><p>AWS Cloud Practitioner certified, with hands-on deployment experience across several free-tier platforms.</p></div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <h2 class="rv">Featured <span>projects</span></h2><p class="sub rv">Things I've built and shipped</p>
+  <div class="grid projects" id="pg"></div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2 class="rv">Tech <span>stack</span></h2><p class="sub rv">What I work with</p>
+  <div class="grid skills" id="sg"></div>
+</div></section>
+
+<section id="certs"><div class="wrap">
+  <h2 class="rv">Certifi<span>cations</span></h2><p class="sub rv">Learning, verified</p>
+  <div class="grid certs">
+    <div class="glass rv">☁️ <b>AWS Cloud Practitioner</b><small>Amazon Web Services</small></div>
+    <div class="glass rv">🐍 <b>Complete Python Bootcamp</b><small>Udemy</small></div>
+    <div class="glass rv">☕ <b>Java Full Stack Training</b><small>TNS India Foundation</small></div>
+    <div class="glass rv">📊 <b>Advanced MS Office</b><small>Naan Mudhalvan, Govt. of Tamil Nadu</small></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <h2 class="rv">Let's build <span>something</span></h2>
+  <p class="lead rv">I'm open to fresher and entry-level roles. If you're hiring or have an idea, say hi.</p>
+  <div class="btns rv" style="justify-content:center"><a class="btn p" href="mailto:hafiz12112003@gmail.com">hafiz12112003@gmail.com</a><a class="btn" href="https://github.com/Hafiz12112003" target="_blank" rel="noopener">github.com/Hafiz12112003</a><a class="btn" href="Hafiz_Resume.pdf" download="Hafiz_Resume.pdf">Download resume ⬇</a></div>
+</div></section>
+</main>
+<footer>© 2026 Muhammad Hafiz · Built with Three.js and caffeine</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const G='https://github.com/Hafiz12112003/';
+const P=[
+{n:'🧵 Signal Stitcher',d:'Finds the same customer problem across GitHub issues and Play reviews and keeps the evidence. Multilingual embeddings plus clustering, with a React + TypeScript viewer.',h:'1,338 signals → 72 themes · F1 0.63 vs 0.38 baseline',t:['Python','TypeScript','React','scikit-learn'],l:[['Live demo','https://signal-stitcher-nextcloud.netlify.app/'],['Code',G+'signal-stitcher']]},
+{n:'💊 Aivoa Complaint Intelligence',d:'AI copilot for pharma complaint intake. A 4-node LangGraph workflow extracts fields, triages severity, checks completeness and drafts a QA-ready summary.',h:'LangGraph · FastAPI · Groq · PostgreSQL',t:['LangGraph','FastAPI','React','Redux'],l:[['Code',G+'aivoa-complaint-management-system']]},
+{n:'🛒 ShopNest',d:'AI-powered e-commerce support platform. A RAG pipeline retrieves FAQ context before calling Llama 3.3 70B via Groq, with JWT + bcrypt auth, Admin/User roles, a modular Flask Blueprints backend and a real-time admin dashboard.',h:'15+ REST APIs · Selected for second-round interview',t:['Flask','MongoDB','React','Groq'],l:[['Code',G+'shopnest-chatbot']]},
+{n:'👁️ EyeSight',d:'Final-year project for low-cost diabetic retinopathy screening. I benchmarked EfficientNet, ResNet and DenseNet in TensorFlow and built a full-stack app with risk dashboards, confidence scores and automated reports.',h:'3 architectures benchmarked · 90%+ accuracy',t:['TensorFlow','Flask','React','Tailwind'],l:[['Code',G+'Eyesight-dr-detection']]},
+{n:'🎨 Mini SaaS Template Store',d:'Template marketplace with JWT auth, search, category filters and favorites. Deployed end to end on Vercel, Render and Neon.',h:'12 templates · 9 categories · live',t:['React','Node.js','Express','PostgreSQL'],l:[['Live demo','https://fullstack-intern-task-nine.vercel.app/'],['Code',G+'fullstack-intern-task']]},
+{n:'⚽ Scout',d:'Football scouting platform delivered as a client assignment. Neo4j models player, club and league relationships so you can run relationship queries beyond SQL joins, explored through d3-force network visualizations.',h:'Flask · Neo4j · d3-force · React 18',t:['Neo4j','D3.js','Tailwind','Flask'],l:[['Live demo','https://scout-frontend-pblr.onrender.com']]}];
+const S={'Frontend':['HTML5','CSS3','JavaScript (ES6+)','React.js','React Hooks','Tailwind CSS','Responsive Design','TypeScript (basics)'],'Backend':['Python (Flask)','FastAPI','REST APIs','JWT Auth','bcrypt','Node.js','Express'],'Databases':['MongoDB Atlas','MySQL','PostgreSQL','Neo4j'],'AI & ML':['TensorFlow','RAG pipelines','LangGraph','Groq API','scikit-learn'],'Cloud & DevOps':['AWS','Git','GitHub','Linux','CI/CD (basics)','Vercel','Render'],'Tools & Practices':['VS Code','Postman','OOP','Data Structures','Agile/Scrum']};
+const tg=a=>'<div class="tags">'+a.map(x=>'<span>'+x+'</span>').join('')+'</div>';
+pg.innerHTML=P.map(p=>`<div class="glass card rv"><h3>${p.n}</h3><p>${p.d}</p><div class="hl">${p.h}</div>${tg(p.t)}<div class="links">${p.l.map(l=>`<a href="${l[1]}" target="_blank" rel="noopener">${l[0]} →</a>`).join('')}</div></div>`).join('');
+sg.innerHTML=Object.entries(S).map(([k,v])=>`<div class="glass rv"><h4>${k}</h4>${tg(v)}</div>`).join('');
+
+// reveal on scroll
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+// card tilt
+document.querySelectorAll('.card').forEach(c=>{
+  c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(700px) rotateY(${x*8}deg) rotateX(${-y*8}deg) translateY(-4px)`});
+  c.addEventListener('mouseleave',()=>c.style.transform='');
+});
+
+// terminal typing
+const L=['<b>$</b> whoami','muhammad-hafiz','<b>$</b> cat focus.txt','full-stack · RAG · computer vision','<b>$</b> status','<b>✔</b> open to fresher & entry-level roles'];
+let li=0,out='';
+(function type(){if(li>=L.length){t.innerHTML=out+'<span class="cur"></span>';return}
+  const line=L[li++];out+=line+'\n';t.innerHTML=out+'<span class="cur"></span>';setTimeout(type,li%2?650:380)})();
+
+// 3D background: soft particle wave field
+try{
+  const cv=document.getElementById('bg'),R=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true});
+  R.setPixelRatio(Math.min(devicePixelRatio,2));
+  const sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(55,1,.1,100);cam.position.set(0,2.2,10);cam.lookAt(0,-1.5,0);
+  const W=90,D=55,pos=new Float32Array(W*D*3);
+  for(let i=0;i<W;i++)for(let j=0;j<D;j++){const k=(i*D+j)*3;pos[k]=(i-W/2)*.4;pos[k+2]=(j-D/2)*.4-4}
+  const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(pos,3));
+  const pts=new THREE.Points(g,new THREE.PointsMaterial({color:0x6aa8ee,size:.045,transparent:true,opacity:.55}));
+  pts.position.y=-3.2;sc.add(pts);
+  let mx=0,sy=0;
+  addEventListener('mousemove',e=>mx=e.clientX/innerWidth-.5);
+  addEventListener('scroll',()=>sy=scrollY);
+  function size(){R.setSize(innerWidth,innerHeight,false);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix()}
+  addEventListener('resize',size);size();
+  const still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function frame(){
+    const t=still?0:performance.now()*.001,a=g.attributes.position.array;
+    for(let i=0;i<W;i++)for(let j=0;j<D;j++){const k=(i*D+j)*3;a[k+1]=Math.sin(a[k]*.45+t)*.45+Math.cos(a[k+2]*.5+t*.8)*.4}
+    g.attributes.position.needsUpdate=true;
+    cam.position.x+=(mx*2-cam.position.x)*.04;cam.lookAt(0,-1.5,0);
+    pts.position.y+=(-3.2+sy*.0025-pts.position.y)*.08;
+    R.render(sc,cam);requestAnimationFrame(frame);
+  }
+  frame();
+}catch(e){console.warn('3D disabled',e)}
+</script>
+</body>
+</html>
